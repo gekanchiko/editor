@@ -15,13 +15,13 @@ const MyEditor = () => {
   };
 
   return (
-    <>
+    <div style={{ padding: 50 }}>
       Editor
       <Editor editorState={editorState} onChange={onChange} />
       <Button type="primary" loading style={{ marginTop: 20 }}>
         Loading
       </Button>
-    </>
+    </div>
   );
 };
 

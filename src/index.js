@@ -1,16 +1,17 @@
 // import Editor from './components/Editor';
 
-import './index.css';
+import Loader from './components/Loader';
 import * as serviceWorker from './serviceWorker';
 
-require('antd/dist/antd.css');
+import 'antd/dist/antd.css';
+import './index.css';
 
 const React = window.React;
 
 const LazyEditor = React.lazy(() => import('./components/Editor'));
 
 const Editor = () => (
-  <React.Suspense fallback={<div>Loading...</div>}>
+  <React.Suspense fallback={<Loader />}>
     <LazyEditor />
   </React.Suspense>
 );

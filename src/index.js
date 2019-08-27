@@ -1,25 +1,25 @@
-import React from 'react';
+// import React from 'react';
+
+import Editor from './components/Editor';
 
 import './index.css';
 import * as serviceWorker from './serviceWorker';
 
-console.log('module2 loaded');
-
-const Comp = () => <div><p>MODULE 1</p></div>;
+console.log('Module 1 loaded');
 
 const attach = () => {
-  window.module2 = () => {
-    delete window.module2;
+  window.module1 = () => {
+    delete window.module1;
     return {
       routes: [
         {
           exact: true,
-          path: '/mod1',
-          component: Comp
+          path: '/editor',
+          component: Editor
         }
       ],
       navBarItems: [
-        { path: '/mod1', name: 'Module 1' }
+        { path: '/editor', name: 'Editor' }
       ]
     };
   };

@@ -1,15 +1,24 @@
-// import React from 'react';
-
-import Editor from './components/Editor';
+// import Editor from './components/Editor';
 
 import './index.css';
 import * as serviceWorker from './serviceWorker';
 
-console.log('Module 1 loaded');
+require('antd/dist/antd.css');
+
+const React = window.React;
+
+const LazyEditor = React.lazy(() => import('./components/Editor'));
+
+const Editor = () => (
+  <React.Suspense fallback={<div>Loading...</div>}>
+    <LazyEditor />
+  </React.Suspense>
+);
 
 const attach = () => {
   window.module1 = () => {
     delete window.module1;
+    console.log('Module 1 loaded');
     return {
       routes: [
         {

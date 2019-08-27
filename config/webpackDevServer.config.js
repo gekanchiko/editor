@@ -12,6 +12,11 @@ const host = process.env.HOST || '0.0.0.0';
 
 module.exports = function(proxy, allowedHost) {
   return {
+    headers: {
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, PATCH, OPTIONS",
+      "Access-Control-Allow-Headers": "X-Requested-With, content-type, Authorization"
+    },
     // WebpackDevServer 2.4.3 introduced a security fix that prevents remote
     // websites from potentially accessing local content through DNS rebinding:
     // https://github.com/webpack/webpack-dev-server/issues/887
@@ -60,7 +65,7 @@ module.exports = function(proxy, allowedHost) {
     hot: true,
     // It is important to tell WebpackDevServer to use the same "root" path
     // as we specified in the config. In development, we always serve from /.
-    publicPath: '/',
+    publicPath: 'http://localhost:3001/',
     // WebpackDevServer is noisy by default so we emit custom message instead
     // by listening to the compiler events with `compiler.hooks[...].tap` calls above.
     quiet: true,

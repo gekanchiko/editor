@@ -17,9 +17,9 @@ const Editor = () => (
 );
 
 const attach = () => {
-  window.module1 = () => {
-    delete window.module1;
-    console.log('Module 1 loaded');
+  window.editor = () => {
+    delete window.editor;
+    console.log('Editor module is loaded');
     return {
       routes: [
         {

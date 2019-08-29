@@ -1,17 +1,13 @@
-// import Editor from './components/Editor';
-
 import * as serviceWorker from './serviceWorker';
 import ModuleBuilder from './builder';
 
 import 'antd/dist/antd.css';
 import './index.css';
 
-const init = () => {
+export default () => {
   delete window.editor;
   return ModuleBuilder;
 };
-
-export default init;
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

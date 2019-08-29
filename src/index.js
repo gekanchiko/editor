@@ -16,26 +16,23 @@ const Editor = () => (
   </React.Suspense>
 );
 
-const attach = () => {
-  window.editor = () => {
-    delete window.editor;
-    console.log('Editor module is loaded');
-    return {
-      routes: [
-        {
-          exact: true,
-          path: '/editor',
-          component: Editor
-        }
-      ],
-      navBarItems: [
-        { path: '/editor', name: 'Editor' }
-      ]
-    };
-  };
+const init = () => {
+  delete window.editor;
+  return {
+    routes: [
+      {
+        exact: true,
+        path: '/editor',
+        component: Editor
+      }
+    ],
+    navBarItems: [
+      { path: '/editor', name: 'Editor' }
+    ]
+  }
 };
 
-attach();
+export default init;
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

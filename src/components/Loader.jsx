@@ -1,12 +1,9 @@
 import { Icon } from 'antd';
-// import store from '../store';
+import store from '../store';
 
-// const React = require('react');
+const React = store.get('react');
 
-// const React = store.get('react');
-const React = window.React;
-
-const Loader = () => {
+const getLoader = () => {
   return (
     <div style={{ padding: 50 }}>
       <Icon type="loading" />
@@ -14,4 +11,4 @@ const Loader = () => {
   )
 };
 
-export default Loader;
+export default getLoader;

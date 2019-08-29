@@ -1,5 +1,4 @@
 import store from './store';
-import { Icon } from 'antd';
 
 class ModuleBuilder {
 
@@ -12,13 +11,7 @@ class ModuleBuilder {
     const React = store.get('react');
     const LazyEditor = React.lazy(() => import('./components/Editor'));
 
-    const Loader = () => {
-      return (
-        <div style={{ padding: 50 }}>
-          <Icon type="loading" />
-        </div>
-      )
-    };
+    const Loader = require('./components/Loader').default;
 
     const Editor = () => (
       <React.Suspense fallback={<Loader />}>

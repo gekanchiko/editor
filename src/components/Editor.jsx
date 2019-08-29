@@ -1,10 +1,10 @@
-// import React from 'react';
-
 import { Editor, EditorState } from 'draft-js';
 import { Button } from 'antd';
+import store from '../store';
+
 import 'draft-js/dist/Draft.css';
 
-const React = window.React;
+const React = store.get('react');
 const { useState } = React;
 
 const MyEditor = () => {
@@ -24,13 +24,5 @@ const MyEditor = () => {
     </div>
   );
 };
-
-// const MyEditor = () => {
-//   return (
-//     <div>
-//       <p>MODULE 1 -> Editor edited</p>
-//     </div>
-//   );
-// };
 
 export default MyEditor;

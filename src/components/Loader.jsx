@@ -1,5 +1,9 @@
 import { Icon } from 'antd';
+// import store from '../store';
 
+// const React = require('react');
+
+// const React = store.get('react');
 const React = window.React;
 
 const Loader = () => {

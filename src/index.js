@@ -1,35 +1,14 @@
 // import Editor from './components/Editor';
 
-import Loader from './components/Loader';
 import * as serviceWorker from './serviceWorker';
+import ModuleBuilder from './builder';
 
 import 'antd/dist/antd.css';
 import './index.css';
 
-const React = window.React;
-
-const LazyEditor = React.lazy(() => import('./components/Editor'));
-
-const Editor = () => (
-  <React.Suspense fallback={<Loader />}>
-    <LazyEditor />
-  </React.Suspense>
-);
-
 const init = () => {
   delete window.editor;
-  return {
-    routes: [
-      {
-        exact: true,
-        path: '/editor',
-        component: Editor
-      }
-    ],
-    navBarItems: [
-      { path: '/editor', name: 'Editor' }
-    ]
-  }
+  return ModuleBuilder;
 };
 
 export default init;

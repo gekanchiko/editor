@@ -20,16 +20,9 @@ class ModuleBuilder {
     );
 
     return {
-      routes: [
-        {
-          exact: true,
-          path: '/editor',
-          component: Editor
-        }
-      ],
-      navBarItems: [
-        { path: '/editor', name: 'Editor' }
-      ]
+      components: {
+        editor: Editor
+      }
     };
   }
 }
